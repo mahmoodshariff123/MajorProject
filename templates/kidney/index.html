@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Kidney Disease Prediction</h2>
+    <form action="/predict_kidney" method="POST">
+        <label>Age:</label>
+        <input type="text" name="age" required>
+        
+        <label>Blood Pressure (bp):</label>
+        <input type="text" name="bp" required>
+        
+        <label>Albumin (al):</label>
+        <input type="text" name="al" required>
+        
+        <label>Sugar (su):</label>
+        <input type="text" name="su" required>
+        
+        <label>Red Blood Cells (rbc - 0 for normal, 1 for abnormal):</label>
+        <input type="text" name="rbc" required>
+        
+        <label>Pus Cells (pc - 0 for normal, 1 for abnormal):</label>
+        <input type="text" name="pc" required>
+        
+        <label>Pus Cell Clumps (pcc - 0 for not present, 1 for present):</label>
+        <input type="text" name="pcc" required>
+        
+        <label>Bacteria (ba - 0 for not present, 1 for present):</label>
+        <input type="text" name="ba" required>
+        
+        <label>Blood Glucose Random (bgr):</label>
+        <input type="text" name="bgr" required>
+        
+        <label>Blood Urea (bu):</label>
+        <input type="text" name="bu" required>
+        
+        <label>Serum Creatinine (sc):</label>
+        <input type="text" name="sc" required>
+        
+        <label>Potassium Level (pot):</label>
+        <input type="text" name="pot" required>
+        
+        <label>White Blood Cell Count (wc):</label>
+        <input type="text" name="wc" required>
+        
+        <label>Hypertension (htn - 0 for no, 1 for yes):</label>
+        <input type="text" name="htn" required>
+        
+        <label>Diabetes Mellitus (dm - 0 for no, 1 for yes):</label>
+        <input type="text" name="dm" required>
+        
+        <label>Coronary Artery Disease (cad - 0 for no, 1 for yes):</label>
+        <input type="text" name="cad" required>
+        
+        <label>Pedal Edema (pe - 0 for no, 1 for yes):</label>
+        <input type="text" name="pe" required>
+        
+        <label>Anemia (ane - 0 for no, 1 for yes):</label>
+        <input type="text" name="ane" required>
+        
+        <button type="submit">Predict Kidney Disease</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+</html>
