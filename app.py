@@ -47,7 +47,7 @@ def predict_heart():
         # Scale and predict
         final_features = scaler1.transform([features])
         prediction = heart_model.predict(final_features)
-        result = "healthy heart" if prediction[0] == 1 else "heart problem"
+        result = "heart problem" if prediction[0] == 1 else "healthy heart"
         return render_template('heart/index.html', prediction_text=result)
     except Exception as e:
         return str(e)
